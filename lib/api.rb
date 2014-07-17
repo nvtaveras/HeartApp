@@ -2,13 +2,14 @@ class HeartApi
 	include HTTParty
 	require_relative 'card'
 
-	attr_accessor :cards
+	attr_accessor :cards, :cards_sorted
 	attr_reader :base_url
 
 	def initialize
 		@cards = []
 		@base_url = 'http://hearthstoneapi.com/cards/'
 		initialize_card
+		@cards_sorted = @cards.sort_by{ |c| c.cost.to_i}
 	end
 
 	def initialize_card
@@ -21,7 +22,7 @@ class HeartApi
 			cclass = response[i]['class']
 			description = response[i]['description']
 			quality = response[i]['quality']
-			cost = response[i]['cost']
+			cost = response[i]['cost'].to_i
 			health = response[i]['health']
 			attack = response[i]['attack']
 			@cards.push Card.new(name, type, set, id_api, cclass, description, quality, cost, health, attack)
@@ -38,6 +39,24 @@ class HeartApi
 
 	def get_cards_by_cost low, high
 		@cards.select { |c| c.cost >= low && c.cost <= high }
+	end
+
+	def get_cards_by_cost_optimized cost
+		low = 0
+		high = @cards_sorted.length - 1
+		cost = cost.to_i
+
+		while low < high do
+		    mid = low + (high-low+1)/2    
+
+	        if  @cards_sorted[mid].cost.to_i > cost
+		    	high = mid-1
+		    else
+		    	low = mid
+	     	end
+	    end
+
+	    @cards_sorted[0..low]
 	end
 
 end
