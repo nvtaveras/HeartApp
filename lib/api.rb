@@ -1,5 +1,5 @@
 class HeartApi
-	require 'HTTParty'
+	include HTTParty
 	require_relative 'card'
 
 	attr_accessor :cards
@@ -8,7 +8,7 @@ class HeartApi
 	def initialize
 		@cards = []
 		@base_url = 'http://hearthstoneapi.com/cards/'
-		set_cards
+		initialize_card
 	end
 
 	def initialize_card
