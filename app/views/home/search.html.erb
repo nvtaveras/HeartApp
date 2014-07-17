@@ -1,27 +1,16 @@
-<body class="background">
+<div id="search">
+  <h1>What's the maximum cost you can afford?</h1>
 
-
-<h1>Holaaa</h1>
 	<%= form_tag '/search/', method: "get", :class => "form-inline" do %>
-	    
-	    <%= label_tag :name %>
-	    <%= text_field_tag :name,"",class: "form-control" %><br>
-	    
-		<%= label_tag :set %>
-		<%= text_field_tag :set ,"",class: "form-control"%><br>
+    <div class="form-group">
+		  <%= number_field_tag :cost ,"",class: "form-control", placeholder: "Max Cost..."%><br />
+    </div>
 
-		<%= label_tag :cost %>
-		<%= text_field_tag :cost ,"",class: "form-control"%><br>
 
-		<%= submit_tag "Search",class: "btn btn-default" %>
-
+	<%= submit_tag "Search", class: "btn btn-primary" %>
 	<% end %>
-</p>
+</div>
 
-<%= @filtered2.length %>
-
-<% @filtered2.each do |card| %>
+<% for card in @filtered2 do %>
 	  <%= card.name %> <br>
 <% end %>
-
-</body>

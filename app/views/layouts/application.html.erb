@@ -6,7 +6,12 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
-<body>
+<div class="header">
+    <div class="col-xs-2 logo">HeartApp<br />
+      <h4><i>Filter, Search, Results.</i></h4>
+    </div>
+</div>
+<body class="background">
 
 <%= yield %>
 
