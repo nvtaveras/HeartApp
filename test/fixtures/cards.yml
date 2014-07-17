@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  type: 1
+  set: 1
+  id: 1
+  class: 1
+  description: MyText
+  quality: 1
+  cost: 1
+  health: 1
+  attack: 1
+
+two:
+  name: MyString
+  type: 1
+  set: 1
+  id: 1
+  class: 1
+  description: MyText
+  quality: 1
+  cost: 1
+  health: 1
+  attack: 1
