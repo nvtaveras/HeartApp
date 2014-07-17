@@ -1,1 +1,18 @@
-<h1>Welcome</h1>
+<%= form_tag '/search',method: "get" do%>
+	
+	<%= label_tag :name %>
+	<%= text_field_tag :name %><br>
+	<%= label_tag :type %>
+	<%= text_field_tag :type %><br>
+	<%= label_tag :set %>
+	<%= text_field_tag :set %><br>
+	<%= label_tag :cost %>
+	<%= text_field_tag :cost %><br>
+	<%= label_tag :class %>
+	<%= text_field_tag :class %><br>
+	<%= label_tag :quality %>
+	<%= text_field_tag :quality %><br>
+
+	<%= submit_tag 'Search'%>
+
+<% end %>
