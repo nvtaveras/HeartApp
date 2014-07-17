@@ -2,7 +2,7 @@
 
 
 <h1>Holaaa</h1>
-	<%= form_tag '', method: "get", :class => "form-inline" do %>
+	<%= form_tag '/search/:cost', method: "get", :class => "form-inline" do %>
 	    
 	    <%= label_tag :name %>
 	    <%= text_field_tag :name,"",class: "form-control" %><br>
@@ -17,4 +17,11 @@
 
 	<% end %>
 </p>
+
+
+
+<% @filtered.each do |card| %>
+	  <%= card.name %> <br>
+<% end %>
+
 </body>
