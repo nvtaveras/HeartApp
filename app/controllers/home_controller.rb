@@ -1,5 +1,6 @@
 require 'api'
 
+
 class HomeController < ApplicationController
 
 	def welcome
@@ -15,6 +16,7 @@ class HomeController < ApplicationController
 			@filtered2 = @card_api.get_cards_by_cost_optimized(params[:cost].to_i)
 			flash[:notice] = "Your search returned #{@filtered2.length} results!"
 		end
+		@filtered2 = @filtered2.paginate(:page => params[:page],:per_page => 10)
 	end
 
 end

@@ -11,8 +11,9 @@
 	<% end %>
 </div>
 
-<!--
+
 <% for card in @filtered2 do %>
 	  <%= card.name %> <br>
 <% end %>
--->
+
+<%= will_paginate @filtered2 %>
