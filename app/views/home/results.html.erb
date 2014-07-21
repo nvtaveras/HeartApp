@@ -1,0 +1,29 @@
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>Name </th>
+      <th>Set </th>
+      <th>Cost </th>
+      <th>Description </th>
+      <th>Health </th>
+      <th>Attack </th>
+
+    </tr>
+  </thead>
+
+  <tbody>
+    <% for card in @filtered2 do %>
+      <tr>
+        <td><%= link_to card.name,search_path %>&nbsp</td>
+        <td><%= card.set %>&nbsp</td>
+        <td><%= card.cost %>&nbsp</td>
+        <td><%= card.description %>&nbsp</td>
+        <td><%= card.health %>&nbsp</td>
+        <td><%= card.attack %>&nbsp</td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+
+<%= will_paginate @filtered2 %>

@@ -1,7 +1,7 @@
 <div id="search">
   <h1>What's the <b>maximum cost</b> you can afford?</h1>
 
-	<%= form_tag '/search/', method: "get", :class => "form-inline" do %>
+	<%= form_tag '/results', method: "get", :class => "form-inline" do %>
     <div class="form-group">
 		  <%= number_field_tag :cost ,"",class: "form-control", placeholder: "Max Cost..."%><br />
     </div>
@@ -12,8 +12,3 @@
 </div>
 
 
-<% for card in @filtered2 do %>
-	  <%= card.name %> <br>
-<% end %>
-
-<%= will_paginate @filtered2 %>

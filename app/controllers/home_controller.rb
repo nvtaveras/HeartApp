@@ -8,6 +8,10 @@ class HomeController < ApplicationController
 
 	def search
 		# render :text => params.inspect
+		
+	end
+
+	def results
 		@card_api = HeartApi.new
 		@filtered = []
 		@filtered2 = []
