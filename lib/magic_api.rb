@@ -1,5 +1,5 @@
 class MTGApi
-	include HTTParty
+	require 'httparty'
 	require_relative 'mtgcard'
 
 	attr_reader :base_url
@@ -74,8 +74,31 @@ class MTGApi
 		MTGCard.new(id, name, manacost, description)
 	end
 
+	def get_card_manas manacost
+		res = Hash.new
+		res['W'] = 0
+		res['U'] = 0
+		res['B'] = 0
+		res['R'] = 0
+		res['G'] = 0
+		while idx < manacost.length do
+			if is_i?(manacost[idx])
+				extra = extra * 10
+				extra = extra + manacost[idx].to_i
+			else
+				# Decrement only if it exist
+				if manacost[idx] == 'W' || manacost[idx] == 'U' || manacost[idx] == 'B' || manacost[idx] == 'R' || manacost[idx] == 'G'
+					res[manacost[idx]] = res[manacost[idx]] + 1
+				end
+			end
+			idx = idx + 1
+		end
+		res['E'] = extra
+		res
+	end
+
 	def is_i? c
-       c >= '0' && c <= '9'
-    end
+    c >= '0' && c <= '9'
+  end
 
 end
