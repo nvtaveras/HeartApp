@@ -1,0 +1,2 @@
+module MtgHelper
+end

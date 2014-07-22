@@ -1,0 +1,24 @@
+
+<div id="search">
+  <h1>What's are the <b>mana's </b> you have?</h1>
+
+	<%= form_tag '/resultsmtg', method: "get", :class => "form-inline" do %>
+    <div class="form-group">
+      <div>
+        <%= image_tag "Blue_Mana.png"%>
+        <%= number_field_tag :cost ,"", min: 0 , class: "form-control"%> <br>
+        <%= image_tag "Green_Mana.png"%>
+        <%= number_field_tag :cost ,"", min: 0 , class: "form-control"%> <br>
+        <%= image_tag "Red_Mana.png"%>
+        <%= number_field_tag :cost ,"", min: 0 , class: "form-control"%> <br>
+        <%= image_tag "White_Mana.png"%>
+        <%= number_field_tag :cost ,"", min: 0 , class: "form-control"%> <br>
+        <%= image_tag "Black_Mana.png"%>
+        <%= number_field_tag :cost ,"", min: 0 , class: "form-control"%> <br>
+      </div>
+    </div>
+    <br /><br />
+    <br /><br />
+	<%= submit_tag "Search", class: "btn btn-primary" %>
+	<% end %>
+</div>

@@ -1,5 +1,5 @@
 class HeartApi
-	require 'HTTParty'
+	include HTTParty
 	require_relative 'mtgcard'
 
 	attr_reader :base_url
