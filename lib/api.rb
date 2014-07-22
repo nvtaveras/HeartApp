@@ -19,7 +19,7 @@ class HeartApi
 			type = response[i]['type']
 			set = response[i]['set']
 			id_api = response[i]['id_api']
-			cclass = response[i]['class']
+			cclass = response[i]['classs']
 			description = response[i]['description']
 			quality = response[i]['quality']
 			cost = response[i]['cost'].to_i
