@@ -1,5 +1,5 @@
 class MTGApi
-	include HTTParty
+	require 'HTTParty'
 	require_relative 'mtgcard'
 
 	attr_reader :base_url
@@ -38,7 +38,10 @@ class MTGApi
 				extra = extra * 10
 				extra = extra + manacost[idx].to_i
 			else
-				got[manacost[idx]] = got[manacost[idx]] - 1;
+				# Decrement only if it exist
+				if manacost[idx] != 'X' && manacost[idx] != 'S'
+					got[manacost[idx]] = got[manacost[idx]] - 1
+				end
 			end
 			idx = idx + 1
 		end
@@ -50,11 +53,16 @@ class MTGApi
 				extra = extra - v
 			end
 		end
-		f && extra <= 0
+		f == 1 && extra <= 0
 	end
 
 	def can_buy_from_set set_id, w, u, b, r, g
 		cards = get_cards_by_set(set_id)
+		res = []
+		for i in 0..cards.length - 1
+			res.push cards[i] if can_buy(cards[i], w, u, b, r, g) 
+		end
+		res
 	end
 
 	def is_i? c
