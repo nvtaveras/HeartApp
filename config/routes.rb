@@ -5,6 +5,10 @@ Rails.application.routes.draw do
   get '/searchhs' => 'home#searchhs'
   get '/resultshs' => 'home#resultshs'
   get '/cardinfohs/:id_api' => 'home#cardinfohs' , as: :cardinfohs
+
+  get '/searchmtg' => 'home#searchmtg'
+  get '/resultsmtg' => 'home#resultsmtg'
+  get '/cardinfomtg/:id_api' => 'home#cardinfomtg' , as: :cardinfomtg
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
