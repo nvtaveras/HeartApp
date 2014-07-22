@@ -1,4 +1,4 @@
-require 'api'
+require 'heart_api'
 
 
 class HomeController < ApplicationController
