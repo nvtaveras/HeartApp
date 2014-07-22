@@ -1,5 +1,5 @@
 class HeartApi
-	include HTTParty
+	require 'httparty'
 	require_relative 'hscard'
 
 	attr_accessor :cards, :cards_sorted
