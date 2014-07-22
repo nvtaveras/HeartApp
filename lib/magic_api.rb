@@ -1,5 +1,5 @@
 class MTGApi
-	require 'HTTParty'
+	include HTTParty
 	require_relative 'mtgcard'
 
 	attr_reader :base_url
@@ -39,7 +39,7 @@ class MTGApi
 				extra = extra + manacost[idx].to_i
 			else
 				# Decrement only if it exist
-				if manacost[idx] != 'X' && manacost[idx] != 'S'
+				if manacost[idx] == 'W' || manacost[idx] == 'U' || manacost[idx] == 'B' || manacost[idx] == 'R' || manacost[idx] == 'G'
 					got[manacost[idx]] = got[manacost[idx]] - 1
 				end
 			end
@@ -63,6 +63,15 @@ class MTGApi
 			res.push cards[i] if can_buy(cards[i], w, u, b, r, g) 
 		end
 		res
+	end
+
+	def get_card_by_id id
+		request_url = @base_url + 'cards/' + id.to_s
+		response = HTTParty.get(request_url)
+		name = response['name']
+		manacost = response['manaCost']
+		description = response['description']
+		MTGCard.new(id, name, manacost, description)
 	end
 
 	def is_i? c
