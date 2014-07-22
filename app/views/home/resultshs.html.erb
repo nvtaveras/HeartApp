@@ -14,7 +14,7 @@
   <tbody>
     <% for card in @filtered2 do %>
       <tr>
-        <td><%= link_to card.name,cardinfo_path(card.id_api,:cost => params[:cost])%>&nbsp</td>
+        <td><%= link_to card.name,cardinfohs_path(card.id_api,:cost => params[:cost])%>&nbsp</td>
         <td><%= card.set %>&nbsp</td>
         <td><%= card.cost %><%= image_tag "ManaCrystalIcon.png",size: "20x20"%></td>
         <td><%= card.description %></td>
@@ -30,7 +30,7 @@
 <br>
 
 <div class="btn-group">
-  <a  href = "/search" class="btn btn-primary " > Back to Search </a>  
+  <a  href = "/searchhs" class="btn btn-primary " > Back to Search </a>  
 </div>
 <br><br>
 

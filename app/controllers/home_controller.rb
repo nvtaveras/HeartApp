@@ -8,15 +8,15 @@ class HomeController < ApplicationController
 	def welcome
 	end
 
-	def search
+	def searchhs
 		# render :text => params.inspect		
 	end
 
-	def cardinfo
+	def cardinfohs
 		@card = $card_api.get_cards.find{ |x| x.id_api == params[:id_api].to_i}
 	end
 
-	def results
+	def resultshs
 		@filtered = []
 		@filtered2 = []
 		

@@ -1,10 +1,10 @@
 Rails.application.routes.draw do
 
-  root 'home#search'
+  root 'home#welcome'
   get '/welcome' => 'home#welcome'
-  get '/search' => 'home#search'
-  get '/results' => 'home#results'
-  get '/cardinfo/:id_api' => 'home#cardinfo' , as: :cardinfo
+  get '/searchhs' => 'home#searchhs'
+  get '/resultshs' => 'home#resultshs'
+  get '/cardinfohs/:id_api' => 'home#cardinfohs' , as: :cardinfohs
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
