@@ -10,6 +10,26 @@
     <div class="form-group">
 		  <%= text_field_tag :class ,"",class: "form-control", placeholder: "Class..." %>
     </div>
+
+    <br><br>
+
+    <div class="form-group" >
+
+    <input list="class_options" name="classes" class="form-control">
+    <datalist id="class_options">
+      <option value="Mage">
+      <option value="Paladin">
+      <option value="Neutral">
+      <option value="Hunter">
+      <option value="Rogue">
+      <option value="Warrior">
+      <option value="Shaman">
+      <option value="Warlock">
+      <option value="Priest">
+    </datalist>
+
+    </div>
+
     <br /><br />
 	<%= submit_tag "Search", class: "btn btn-primary" %>
 	<% end %>
