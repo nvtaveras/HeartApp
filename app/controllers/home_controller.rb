@@ -12,8 +12,7 @@ class HomeController < ApplicationController
 
 	def cardinfo
 		@card_api = HeartApi.new
-		@filtered2 = @card_api.get_cards_by_cost_optimized(params[:cost])
-		@card = @filtered2.find{|x| x.id_api == params[:id_api].to_i}
+		@card = @card_api.get_cards.find{ |x| x.id_api == params[:id_api].to_i}
 	end
 
 	def results

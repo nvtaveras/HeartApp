@@ -1,9 +1,9 @@
 class HeartApi
-	require 'HTTParty'
+	include HTTParty
 	require_relative 'card'
 
 	attr_accessor :cards, :cards_sorted
-	attr_reader :base_url
+	attr_reader :base_url, :base_image_url
 
 	def initialize
 		@cards = []
