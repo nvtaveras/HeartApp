@@ -54,7 +54,7 @@ class HeartApi
 	end
 
 	def parse_classs id
-		if id.nil?
+		if id == nil
 			:Neutral
 		elsif id == 1
 			:Warrior
@@ -93,7 +93,7 @@ class HeartApi
 			type = parse_type(response[i]['type'])
 			set = parse_set(response[i]['set'])
 			id_api = response[i]['id']
-			cclass = parse_classs(response[i]['classs'])
+			cclass = parse_classs(response[i]['classs']).to_s
 			description = response[i]['description']
 			quality = parse_quality(response[i]['quality'])
 			cost = response[i]['cost'].to_i

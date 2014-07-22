@@ -19,11 +19,18 @@ class HomeController < ApplicationController
 	def results
 		@filtered = []
 		@filtered2 = []
-		if params[:cost].present?
-			@filtered = $card_api.get_cards_by_cost(0, params[:cost].to_i)
-			@filtered2 = $card_api.get_cards_by_cost_optimized(params[:cost].to_i)
-			flash.now[:notice] = "Your search returned #{@filtered2.length} results!"
+		
+		@filtered = $card_api.get_cards_by_cost(0, params[:cost].to_i)
+		@filtered2 = $card_api.get_cards_by_cost_optimized(params[:cost].to_i)
+		
+
+		if params[:classes].present?
+			@filtered = @filtered.select{ |card| card.class == params[:classes]}
+			@filtered2 = @filtered2.select{ |card| card.class == params[:classes]}
 		end
+
+		flash.now[:notice] = "Your search returned #{@filtered2.length} results!"
+
 		@filtered2 = @filtered2.paginate(:page => params[:page],:per_page => 10)
 	end
 
