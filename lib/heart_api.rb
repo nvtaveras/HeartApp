@@ -1,6 +1,6 @@
 class HeartApi
 	include HTTParty
-	require_relative 'hearthstone_card'
+	require_relative 'HSCard'
 
 	attr_accessor :cards, :cards_sorted
 	attr_reader :base_url, :base_image_url
