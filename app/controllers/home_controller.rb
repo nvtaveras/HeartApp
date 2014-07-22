@@ -7,11 +7,7 @@ class HomeController < ApplicationController
 	end
 
 	def search
-		# render :text => params.inspect
-		@api_test = HeartApi.new
-		@card_api = HeartApi.new
-		@filtered2 = @card_api.get_cards_by_cost_optimized(params[:cost].to_i)
-		
+		# render :text => params.inspect		
 	end
 
 	def cardinfo

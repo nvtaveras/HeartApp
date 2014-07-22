@@ -9,6 +9,7 @@ class HeartApi
 		@cards = []
 		@base_url = 'http://hearthstoneapi.com/cards/'
 		@base_image_url = 'https://api.myjson.com/bins/36b0c'
+		# @base_image_url = 'http://localhost:3000/assets/cards_images.json'
 		initialize_card
 		@cards_sorted = @cards.sort_by{ |c| c.cost.to_i}
 		
@@ -45,7 +46,6 @@ class HeartApi
 			if description.nil?
 				description = "-"
 			end
-			puts image_url
 			@cards.push Card.new(name, type, set, id_api, cclass, description, quality, cost, health, attack, image_url)
 		end
 	end
