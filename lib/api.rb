@@ -15,6 +15,68 @@ class HeartApi
 		
 	end
 
+	def parse_set id
+		if id == 2
+			:Basic
+		elsif id == 3
+			:Expert
+		elsif id == 4
+			:Reward
+		elsif id == 5
+			:Missions
+		elsif id == 11
+			:Promotion
+		end
+	end
+
+	def parse_type id
+		if id == 4
+			:Minion
+		elsif id == 5
+			:Spell
+		elsif id == 7
+			:Weapon
+		end
+	end
+
+	def parse_quality id
+		if id == 0
+			:Free
+		elsif id == 1
+			:Common
+		elsif id == 3
+			:Rare
+		elsif id == 4
+			:Epic
+		elsif id == 5
+			:Legendary
+		end
+	end
+
+	def parse_classs id
+		if id.nil?
+			:Neutral
+		elsif id == 1
+			:Warrior
+		elsif id == 2
+			:Paladin
+		elsif id == 3
+			:Hunter
+		elsif id == 4
+			:Rogue
+		elsif id == 5
+			:Priest
+		elsif id == 7
+			:Shaman
+		elsif id == 8
+			:Mage
+		elsif id == 9
+			:Warlock
+		elsif id == 11
+			:Druid
+		end
+	end
+
 	def initialize_card
 		response = HTTParty.get(@base_url + 'findAll')
 
@@ -28,12 +90,12 @@ class HeartApi
 		
 		for i in 0..response.length - 1
 			name = response[i]['name']
-			type = response[i]['type']
-			set = response[i]['set']
+			type = parse_type(response[i]['type'])
+			set = parse_set(response[i]['set'])
 			id_api = response[i]['id']
-			cclass = response[i]['classs']
+			cclass = parse_classs(response[i]['classs'])
 			description = response[i]['description']
-			quality = response[i]['quality']
+			quality = parse_quality(response[i]['quality'])
 			cost = response[i]['cost'].to_i
 			health = response[i]['health']
 			attack = response[i]['attack']
