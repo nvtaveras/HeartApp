@@ -8,10 +8,6 @@ class HeartApi
 		@base_url = 'http://api.mtgdb.info/'
 	end
 
-	# def initialiaze_cards
-	# 	response = HTTParty.get(@base_url + 'cards')
-	# end
-
 	def get_cards_by_set set_id
 		request_url = @base_url + 'sets/' + set_id + '/cards'
 		response = HTTParty.get(request_url)
