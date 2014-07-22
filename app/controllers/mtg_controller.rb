@@ -2,6 +2,7 @@ require 'magic_api'
 
 class MtgController < ApplicationController
 
+	$mtg_api = MTGApi.new
 	def searchmtg
 	
 	end
@@ -11,10 +12,10 @@ class MtgController < ApplicationController
 	end
 
 	def resultsmtg
-		@mtg_api = MTGApi.new
+		
 		@filtered = []
 		
-		@filtered = @mtg_api.can_buy_from_set(params[:set], params[:white_cost], params[:blue_cost], params[:black_cost], params[:red_cost], params[:green_cost])
+		@filtered = $mtg_api.can_buy_from_set(params[:set], params[:white_cost].to_i, params[:blue_cost].to_i, params[:black_cost].to_i, params[:red_cost].to_i, params[:green_cost].to_i)
 
 		flash.now[:notice] = "Your search returned #{@filtered.length} results!"
 
