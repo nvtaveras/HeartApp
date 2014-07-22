@@ -20,7 +20,7 @@ class HeartApi
 			name = response[i]['name']
 			type = response[i]['type']
 			set = response[i]['set']
-			id_api = response[i]['id_api']
+			id_api = response[i]['id']
 			cclass = response[i]['classs']
 			description = response[i]['description']
 			quality = response[i]['quality']

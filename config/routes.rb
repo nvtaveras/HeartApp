@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   get '/welcome' => 'home#welcome'
   get '/search' => 'home#search'
   get '/results' => 'home#results'
+  get '/cardinfo/:id_api' => 'home#cardinfo' , as: :cardinfo
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

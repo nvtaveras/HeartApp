@@ -1,0 +1,28 @@
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>Set </th>
+      <th>Cost </th>
+      <th>Description </th>
+      <th>Health </th>
+      <th>Attack </th>
+      <th>Quality </th>
+      <th>Type </th>
+
+    </tr>
+  </thead>
+
+  <tbody>
+    
+      <tr>
+        <td><%= @card.set %></td>
+        <td><%= @card.cost %><%= image_tag "ManaCrystalIcon.png",size: "20x20"%></td>
+        <td><%= @card.description %></td>
+        <td><strong><%= @card.health %><%= image_tag "HealthCrystalIcon.png",size: "20x20"%><strong></td>
+        <td><strong><%= @card.attack %><%= image_tag "AttackCrystalIcon.png",size: "20x20"%><strong></td>
+        <td><%= @card.quality %></td>
+        <td><%= @card.type %></td>
+      </tr>
+    
+  </tbody>
+</table>
