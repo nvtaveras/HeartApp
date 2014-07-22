@@ -11,8 +11,8 @@ class HomeController < ApplicationController
 	end
 
 	def cardinfo
-		@card_api = HeartApi.new
-		@card = @card_api.get_cards.find{ |x| x.id_api == params[:id_api].to_i}
+		# @card_api = HeartApi.new
+		# @card = @card_api.get_cards.find{ |x| x.id_api == params[:id_api].to_i}
 	end
 
 	def results
