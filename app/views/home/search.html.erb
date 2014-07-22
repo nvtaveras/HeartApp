@@ -4,12 +4,13 @@
 
 	<%= form_tag '/results', method: "get", :class => "form-inline" do %>
     <div class="form-group">
-		  <%= number_field_tag :cost ,"",class: "form-control", placeholder: "Max Cost..."%><br />
+		  <%= number_field_tag :cost ,"",class: "form-control", placeholder: "Max Cost..."%>
     </div>
+    <br /><br />
     <div class="form-group">
-		  <%= text_field_tag :class ,"",class: "form-control", placeholder: "Class..." %><br />
+		  <%= text_field_tag :class ,"",class: "form-control", placeholder: "Class..." %>
     </div>
-
+    <br /><br />
 	<%= submit_tag "Search", class: "btn btn-primary" %>
 	<% end %>
 </div>
