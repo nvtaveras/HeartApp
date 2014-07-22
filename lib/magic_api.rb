@@ -65,6 +65,15 @@ class MTGApi
 		res
 	end
 
+	def get_card_by_id id
+		request_url = @base_url + 'cards/' + id.to_s
+		response = HTTParty.get(request_url)
+		name = response['name']
+		manacost = response['manaCost']
+		description = response['description']
+		MTGCard.new(id, name, manacost, description)
+	end
+
 	def is_i? c
        c >= '0' && c <= '9'
     end
