@@ -1,28 +1,50 @@
-<table class="table table-bordered">
+
+<div class="container" >
+<center><%= image_tag "cards/"+@card.image_url %></center>
+</div>
+
+
+<table class="table table-striped table-bordered table-hover" >
+
   <thead>
     <tr>
-      <th>Set </th>
-      <th>Cost </th>
-      <th>Description </th>
-      <th>Health </th>
-      <th>Attack </th>
-      <th>Quality </th>
-      <th>Type </th>
-
+      <th>Property </th>
+      <th style="width: 50%;">Value </th>
     </tr>
   </thead>
 
   <tbody>
     
       <tr>
+        <td>Set</td>
         <td><%= @card.set %></td>
-        <td><%= @card.cost %><%= image_tag "ManaCrystalIcon.png",size: "20x20"%></td>
+      </tr>
+
+      <tr>
+        <td>Description</td>
         <td><%= @card.description %></td>
+      </tr>
+
+      <tr>
+        <td>Health</td>
         <td><strong><%= @card.health %><%= image_tag "HealthCrystalIcon.png",size: "20x20"%><strong></td>
+      </tr>
+
+      <tr>
+        <td>Attack</td>
         <td><strong><%= @card.attack %><%= image_tag "AttackCrystalIcon.png",size: "20x20"%><strong></td>
+      </tr>
+
+      <tr>
+        <td>Quality</td>
         <td><%= @card.quality %></td>
+      </tr>
+
+      <tr>
+        <td>Type</td>
         <td><%= @card.type %></td>
       </tr>
+
     
   </tbody>
 </table>
