@@ -7,15 +7,10 @@
 		  <%= number_field_tag :cost ,"",class: "form-control", placeholder: "Max Cost..."%>
     </div>
     <br /><br />
-    <div class="form-group">
-		  <%= text_field_tag :class ,"",class: "form-control", placeholder: "Class..." %>
-    </div>
-
-    <br><br>
 
     <div class="form-group" >
 
-    <input list="class_options" name="classes" class="form-control">
+    <input list="class_options" name="classes" class="form-control", placeholder="Class...">
     <datalist id="class_options">
       <option value="Mage">
       <option value="Paladin">
