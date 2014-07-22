@@ -10,21 +10,32 @@ class HeartApi
 		@base_url = 'http://hearthstoneapi.com/cards/'
 		initialize_card
 		@cards_sorted = @cards.sort_by{ |c| c.cost.to_i}
+		
 	end
 
 	def initialize_card
 		response = HTTParty.get(@base_url + 'findAll')
+		
 		for i in 0..response.length - 1
 			name = response[i]['name']
 			type = response[i]['type']
 			set = response[i]['set']
 			id_api = response[i]['id_api']
-			cclass = response[i]['class']
+			cclass = response[i]['classs']
 			description = response[i]['description']
 			quality = response[i]['quality']
 			cost = response[i]['cost'].to_i
 			health = response[i]['health']
 			attack = response[i]['attack']
+			if attack.nil?
+				attack = "-"
+			end
+			if health.nil?
+				health = "-"
+			end
+			if description.nil?
+				description = "-"
+			end
 			@cards.push Card.new(name, type, set, id_api, cclass, description, quality, cost, health, attack)
 		end
 	end

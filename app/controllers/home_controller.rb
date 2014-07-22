@@ -8,6 +8,7 @@ class HomeController < ApplicationController
 
 	def search
 		# render :text => params.inspect
+		@api_test = HeartApi.new
 		
 	end
 

@@ -16,10 +16,10 @@
       <tr>
         <td><%= link_to card.name,search_path %>&nbsp</td>
         <td><%= card.set %>&nbsp</td>
-        <td><%= card.cost %>&nbsp</td>
-        <td><%= card.description %>&nbsp</td>
-        <td><%= card.health %>&nbsp</td>
-        <td><%= card.attack %>&nbsp</td>
+        <td><%= card.cost %><%= image_tag "http://img1.wikia.nocookie.net/__cb20130421182850/hearthstone/images/f/f7/ManaCrystalIcon.png",size: "20x20"%></td>
+        <td><%= card.description %></td>
+        <td><strong><%= card.health %><%= image_tag "http://img4.wikia.nocookie.net/__cb20130602005139/hearthstone/images/0/03/Health_value_back.png",size: "20x20"%><strong></td>
+        <td><strong><%= card.attack %><%= image_tag "http://img3.wikia.nocookie.net/__cb20131117100119/hearthstone/ru/images/8/82/Attack_value_back.png",size: "20x20"%><strong></td>
       </tr>
     <% end %>
   </tbody>
@@ -33,3 +33,4 @@
   <a  href = "/search" class="btn btn-primary " > Back to Search </a>  
 </div>
 <br><br>
+

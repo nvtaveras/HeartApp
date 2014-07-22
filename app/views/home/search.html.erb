@@ -1,3 +1,4 @@
+
 <div id="search">
   <h1>What's the <b>maximum cost</b> you can afford?</h1>
 
@@ -5,10 +6,16 @@
     <div class="form-group">
 		  <%= number_field_tag :cost ,"",class: "form-control", placeholder: "Max Cost..."%><br />
     </div>
-
+    <div class="form-group">
+		  <%= text_field_tag :class ,"",class: "form-control", placeholder: "Class..." , data:{autosource:@categories} %><br />
+    </div>
 
 	<%= submit_tag "Search", class: "btn btn-primary" %>
 	<% end %>
 </div>
+
+
+
+
 
 

@@ -1,0 +1,15 @@
+Run options: --seed 15549
+
+# Running:
+
+HomepageTest#test_homepage (106 ms warmup)
+           wall_time: 10 ms
+              memory: unsupported
+             objects: unsupported
+             gc_runs: 0
+             gc_time: 0 ms
+.
+
+Finished in 0.616235s, 1.6228 runs/s, 0.0000 assertions/s.
+
+1 runs, 0 assertions, 0 failures, 0 errors, 0 skips
