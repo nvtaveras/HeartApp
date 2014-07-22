@@ -8,7 +8,7 @@ class MtgController < ApplicationController
 	end
 
 	def cardinfomtg
-
+		@card = $mtg_api.get_card_by_id(params[:id])
 	end
 
 	def resultsmtg

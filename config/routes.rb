@@ -8,7 +8,7 @@ Rails.application.routes.draw do
 
   get '/searchmtg' => 'mtg#searchmtg'
   get '/resultsmtg' => 'mtg#resultsmtg'
-  get '/cardinfomtg/:id_api' => 'mtg#cardinfomtg' , as: :cardinfomtg
+  get '/cardinfomtg/:id' => 'mtg#cardinfomtg' , as: :cardinfomtg
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

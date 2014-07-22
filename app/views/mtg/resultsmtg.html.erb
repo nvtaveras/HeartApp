@@ -25,7 +25,7 @@
   <tbody>
     <% for card in @filtered do %>
       <tr>
-        <td><%= card.name %>&nbsp</td>
+       <td><%= link_to card.name,cardinfomtg_path(card.id)%>&nbsp</td>
         <td><%= card.manacost %>
         <td><%= card.description %></td>
       </tr>
