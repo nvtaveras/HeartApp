@@ -34,4 +34,16 @@ class HomeController < ApplicationController
 		@filtered2 = @filtered2.paginate(:page => params[:page],:per_page => 10)
 	end
 
+	def searchmtg
+	
+	end
+
+	def cardinfomtg
+
+	end
+
+	def resultsmtg
+
+	end
+
 end
