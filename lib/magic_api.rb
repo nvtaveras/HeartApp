@@ -1,4 +1,4 @@
-class HeartApi
+class MTGApi
 	include HTTParty
 	require_relative 'mtgcard'
 
@@ -51,6 +51,10 @@ class HeartApi
 			end
 		end
 		f && extra <= 0
+	end
+
+	def can_buy_from_set set_id, w, u, b, r, g
+		cards = get_cards_by_set(set_id)
 	end
 
 	def is_i? c
