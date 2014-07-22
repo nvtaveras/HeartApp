@@ -22,7 +22,8 @@ class HeartApi
 		images_link = Hash.new
 		images_response = HTTParty.get(@base_image_url)
 		for i in 0..images_response.length - 1
-			images_link[ images_response[i]['name'] ] = images_response[i]['image_url']
+			image_name = images_response[i]['image_url']
+			images_link[ images_response[i]['name'] ] = File.basename(image_name)
 		end
 		
 		for i in 0..response.length - 1
@@ -81,3 +82,5 @@ class HeartApi
 	end
 
 end
+
+H = HeartApi.new
