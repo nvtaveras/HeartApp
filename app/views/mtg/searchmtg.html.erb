@@ -1,3 +1,15 @@
+<div class="mtg_header">
+  <div class="col-xs-2 logo"><%= link_to 'MTGApp', searchmtg_path, style: 'color:#FFFFFF;' %><br />
+  <h4><i>Smooth like magic.</i></h4>
+  </div>
+</div>
+<br>
+
+<% flash.each do |name, message| %>
+  <div class="<%= flash_class(name) %>">
+    <%= message %>
+  </div>
+<% end %>
 
 <div id="search">
   <h1>What's are the <b>mana's </b> you have?</h1>
