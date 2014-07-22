@@ -1,5 +1,5 @@
 class HeartApi
-	include HTTParty
+	require 'HTTParty'
 	require_relative 'card'
 
 	attr_accessor :cards, :cards_sorted
@@ -8,6 +8,7 @@ class HeartApi
 	def initialize
 		@cards = []
 		@base_url = 'http://hearthstoneapi.com/cards/'
+		@base_image_url = 'https://api.myjson.com/bins/36b0c'
 		initialize_card
 		@cards_sorted = @cards.sort_by{ |c| c.cost.to_i}
 		
@@ -15,6 +16,13 @@ class HeartApi
 
 	def initialize_card
 		response = HTTParty.get(@base_url + 'findAll')
+
+		# Set the url for each image from a local json file
+		images_link = Hash.new
+		images_response = HTTParty.get(@base_image_url)
+		for i in 0..images_response.length - 1
+			images_link[ images_response[i]['name'] ] = images_response[i]['image_url']
+		end
 		
 		for i in 0..response.length - 1
 			name = response[i]['name']
@@ -27,6 +35,7 @@ class HeartApi
 			cost = response[i]['cost'].to_i
 			health = response[i]['health']
 			attack = response[i]['attack']
+			image_url = images_link[name]
 			if attack.nil?
 				attack = "-"
 			end
@@ -36,7 +45,8 @@ class HeartApi
 			if description.nil?
 				description = "-"
 			end
-			@cards.push Card.new(name, type, set, id_api, cclass, description, quality, cost, health, attack)
+			puts image_url
+			@cards.push Card.new(name, type, set, id_api, cclass, description, quality, cost, health, attack, image_url)
 		end
 	end
 
