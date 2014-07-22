@@ -6,13 +6,8 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
-<div class="header">
-    <div class="col-xs-2 logo"><%= link_to 'HeartApp', searchhs_path, style: 'color:#FFFFFF;' %><br />
-      <h4><i>Filter, Search, Results.</i></h4>
-    </div>
-</div>
-<body class="background">
-<br />
+
+
 <% flash.each do |name, message| %>
   <div class="<%= flash_class(name) %>">
     <%= message %>
@@ -21,5 +16,5 @@
 
 <%= yield %>
 
-</body>
+
 </html>
