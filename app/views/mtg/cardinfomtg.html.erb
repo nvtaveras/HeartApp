@@ -31,10 +31,34 @@
         <td><%= @card.name %></td>
       </tr>
 
+      <tr>
+        <td>R</td>
+        <td><%= @manas['R'] %> <%= image_tag "Red_Mana.png" %> </td>
+      </tr>
 
       <tr>
-        <td>Mana</td>
-        <td><%= @card.manacost %></td>
+        <td>U</td>
+        <td><%= @manas['U'] %> <%= image_tag "Blue_Mana.png" %></td>
+      </tr>
+
+      <tr>
+        <td>G</td>
+        <td><%= @manas['G'] %> <%= image_tag "Green_Mana.png" %></td>
+      </tr>
+
+      <tr>
+        <td>B</td>
+        <td><%= @manas['B'] %> <%= image_tag "Black_Mana.png" %></td>
+      </tr>
+
+      <tr>
+        <td>W</td>
+        <td><%= @manas['W'] %> <%= image_tag "White_Mana.png" %></td>
+      </tr>
+
+      <tr>
+        <td>Extra</td>
+        <td><%= @manas['E'] %></td>
       </tr>
 
       <tr>

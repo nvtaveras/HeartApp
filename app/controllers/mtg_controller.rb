@@ -9,6 +9,7 @@ class MtgController < ApplicationController
 
 	def cardinfomtg
 		@card = $mtg_api.get_card_by_id(params[:id])
+		@manas = $mtg_api.get_card_manas(@card.manacost)
 	end
 
 	def resultsmtg

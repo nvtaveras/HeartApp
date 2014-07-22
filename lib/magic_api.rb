@@ -75,6 +75,8 @@ class MTGApi
 	end
 
 	def get_card_manas manacost
+		idx = 0
+		extra = 0
 		res = Hash.new
 		res['W'] = 0
 		res['U'] = 0
