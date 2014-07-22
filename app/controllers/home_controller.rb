@@ -13,12 +13,7 @@ class HomeController < ApplicationController
 	end
 
 	def cardinfo
-<<<<<<< HEAD
-		# @card_api = HeartApi.new
-		# @card = @card_api.get_cards.find{ |x| x.id_api == params[:id_api].to_i}
-=======
 		@card = $card_api.get_cards.find{ |x| x.id_api == params[:id_api].to_i}
->>>>>>> 3fb190860c8562d6313db06c506d3964996f238c
 	end
 
 	def results
