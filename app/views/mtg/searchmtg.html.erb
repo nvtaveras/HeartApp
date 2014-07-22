@@ -17,16 +17,17 @@
 	<%= form_tag '/resultsmtg', method: "get", :class => "form-inline" do %>
     <div class="form-group">
       <div>
+        <%= text_field_tag :set ,"", placeholder: "Set...", class: "form-control"%> <br>
         <%= image_tag "Blue_Mana.png"%>
-        <%= number_field_tag :cost ,"", min: 0 , class: "form-control"%> <br>
+        <%= number_field_tag :blue_cost ,"", min: 0 , class: "form-control"%> <br>
         <%= image_tag "Green_Mana.png"%>
-        <%= number_field_tag :cost ,"", min: 0 , class: "form-control"%> <br>
+        <%= number_field_tag :green_cost ,"", min: 0 , class: "form-control"%> <br>
         <%= image_tag "Red_Mana.png"%>
-        <%= number_field_tag :cost ,"", min: 0 , class: "form-control"%> <br>
+        <%= number_field_tag :red_cost ,"", min: 0 , class: "form-control"%> <br>
         <%= image_tag "White_Mana.png"%>
-        <%= number_field_tag :cost ,"", min: 0 , class: "form-control"%> <br>
+        <%= number_field_tag :white_cost ,"", min: 0 , class: "form-control"%> <br>
         <%= image_tag "Black_Mana.png"%>
-        <%= number_field_tag :cost ,"", min: 0 , class: "form-control"%> <br>
+        <%= number_field_tag :black_cost ,"", min: 0 , class: "form-control"%> <br>
       </div>
     </div>
     <br /><br />
