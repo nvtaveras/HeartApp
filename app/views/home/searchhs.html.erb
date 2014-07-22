@@ -4,7 +4,7 @@
 
 	<%= form_tag '/resultshs', method: "get", :class => "form-inline" do %>
     <div class="form-group">
-		  <%= number_field_tag :cost ,"",required: true, class: "form-control", placeholder: "Max Cost..."%>
+		  <%= number_field_tag :cost ,"",required: true, min: 0 , class: "form-control", placeholder: "Max Cost..."%>
     </div>
     <br /><br />
 
