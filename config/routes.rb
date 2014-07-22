@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  root 'home#search'
   get '/welcome' => 'home#welcome'
   get '/search' => 'home#search'
   get '/results' => 'home#results'
